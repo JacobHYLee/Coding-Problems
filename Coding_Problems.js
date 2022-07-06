@@ -1,10 +1,15 @@
 //Reverse an array
 
-const arr = [1, 2, 3, 4, 5];
-const reversedArr = [];
+const test = [1, 2, 3, 4, 5];
 
-for (let i = arr.length - 1; i > -1; i--) {
-  reversedArr.push(arr[i]);
+function reversearray(input) {
+  let ret = new Array();
+  for (let i = input.length - 1; i > -1; i--) {
+    ret.push(input[i]);
+  }
+
+  return ret;
 }
 
-console.log(reversedArr);
+reversearray(test);
+console.log(reversearray(test));
