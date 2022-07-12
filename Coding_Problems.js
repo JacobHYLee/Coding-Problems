@@ -72,3 +72,11 @@ function sumOfArrays(input) {
 console.log(sumOfArrays(example));
 
 //sort an array from lowest to highest
+
+const testArray = [5, 8, 2, 1, 6, 3, 9];
+
+function sortArray(input) {
+  return input.sort();
+}
+
+console.log(sortArray(testArray));
