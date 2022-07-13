@@ -122,14 +122,14 @@ console.log(countVowels(str));
 
 // two sum. Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. Leetcode easy problem
 
-const integers = [10, 3, 9, -5, 1, 24, -3, 26];
-const target = 12;
+const integers = [3, 2, 4];
+const target = 6;
 
 function returnIndecies(integers, target) {
   const indices = [];
   for (let i = 0; i < integers.length; i++) {
     for (let j = 0; j < integers.length; j++) {
-      if (integers[i] + integers[j] === target) {
+      if (integers[i] + integers[j] === target && i != j) {
         indices.push(i);
       }
     }
@@ -138,3 +138,21 @@ function returnIndecies(integers, target) {
 }
 
 console.log(returnIndecies(integers, target));
+
+//given an integer x, return true if x is a paindrome integer. Leetcode easy problem
+
+const integer = 123454321;
+
+function palinCheck(isPalin) {
+  for (let i = 0; i < isPalin.length; i++) {
+    for (let j = isPalin.length; i > 0; i--) {
+      if (i === j) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+}
+
+console.log(integer.length);
