@@ -119,3 +119,22 @@ function countVowels(str) {
 }
 
 console.log(countVowels(str));
+
+// two sum. Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. Leetcode easy problem
+
+const integers = [5, 10, 3, 9, 2, 6, 8];
+const target = 17;
+
+function returnIndecies(integers, target) {
+  const indices = [];
+  for (let i = 0; i < integers.length; i++) {
+    for (let j = 0; j < integers.length; j++) {
+      if (integers[i] + integers[j] === target) {
+        indices.push(integers.indexOf(i) + 1 && integers.indexOf(j) + 1);
+      }
+    }
+  }
+  return indices;
+}
+
+console.log(returnIndecies(integers, target));
