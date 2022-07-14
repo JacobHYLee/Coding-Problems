@@ -125,7 +125,7 @@ console.log(countVowels(str));
 const integers = [3, 2, 4];
 const target = 6;
 
-function returnIndecies(integers, target) {
+function returnIndicies(integers, target) {
   const indices = [];
   for (let i = 0; i < integers.length; i++) {
     for (let j = 0; j < integers.length; j++) {
@@ -137,22 +137,110 @@ function returnIndecies(integers, target) {
   return indices;
 }
 
-console.log(returnIndecies(integers, target));
+console.log(returnIndicies(integers, target));
 
 //given an integer x, return true if x is a paindrome integer. Leetcode easy problem
 
-const integer = 123454321;
-
+const integer = 754321234;
+const reverseString = (str) => {
+  let reversed = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+};
 function palinCheck(isPalin) {
-  for (let i = 0; i < isPalin.length; i++) {
-    for (let j = isPalin.length; i > 0; i--) {
-      if (i === j) {
-        return true;
-      } else {
-        return false;
-      }
+  const theString = isPalin.toString();
+  const answer = [];
+  answer.push(theString.slice(0, Math.ceil(theString.length / 2)));
+  const answer2 = answer2.push(
+    theString.slice(Math.floor(theString.length / 2), theString.length)
+  );
+
+  // console.log(answer2);
+}
+// your logic here aite let's start
+const palindromeIntCheck = (num) => {
+  const str = num.toString(); // convert to string first
+  const midpoint = str.length / 2; // for cleanliness
+  const half1 = str.slice(0, midpoint); // this will give first half '1234' -> '12, '12345' -> 12 as well here
+  // if odd, then check from midpoint + 1. else, check from midpoint '1234' -> '34' '12345' -> 45
+  // when odd, str.length % 2 will be 1 -> true. when even, 0 => false
+  const half2 = str.slice(str.length % 2 ? midpoint + 1 : midpoint);
+
+  // split makes a string into an array. '1234' -> [1,2,3,4]
+  // reverse .. reverses the array
+  // join combines it back to a string
+  return half1 === reverseString(half2);
+};
+// me back wb frend ok maybe lololololololol
+
+// let's try it here
+/**
+ * 1. convert num to a string
+ * 2. Loop through string, checking each end at a time if they're the same
+ * 2-1. if at any point they are not equal, terminate and return false
+ * 3. If loop is complete, return true. Means we're good.
+ */
+// 1,2,3,2,1
+const betterPalindromeCheck = (num) => {
+  const str = num.toString();
+  for (let i = 0; i < str.length / 2; i++) {
+    if (str[i] !== str[str.length - i - 1]) {
+      return false;
     }
   }
-}
 
-console.log(integer.length);
+  // if return false; hasn't been hit, that means this is indeed
+  // a palindrome. Therefore we want to return true as an output.
+  return true;
+};
+console.log("CHECKING BETTERPALINDROME");
+console.log(betterPalindromeCheck(12321)); // true
+console.log(betterPalindromeCheck(1234521)); // false
+
+const testing = "Hello";
+console.log(testing.length);
+
+const palinCheckPop = (num) => {
+  const nums = num.toString().split(""); // [1,2,3,4]...
+
+  while (nums.length > 1) {
+    if (nums.pop() !== nums.shift()) return false;
+  }
+
+  return true;
+};
+
+console.log("POPOPOPOPOPCHECK");
+console.log(palinCheckPop(12321));
+console.log(palinCheckPop(12341242));
+// can you actually explain to me from start to end? what you're trying to do
+
+//   for (
+//     let i = theString.length - 1;
+//     i >= Math.floor(theString.length / 2);
+//     i--
+//   ) {
+//     console.log(theString[i]);
+//     console.log(answer2);
+//     console.log(answer);
+//     if (answer === answer2) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+// }
+
+// console.log(palinCheck(integer));
+
+// some other ways to do it, if it helps you
+// probably not the solution you want LOL
+// const palinCheck1 = (num) => {
+//   const str = num.toString();
+//   return str === str.split("").reverse().join("");
+// };
+
+// console.log(palinCheck1("12321")); // true
+// console.log(palinCheck1("1234")); // false
