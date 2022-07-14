@@ -141,24 +141,6 @@ console.log(returnIndicies(integers, target));
 
 //given an integer x, return true if x is a paindrome integer. Leetcode easy problem
 
-const integer = 754321234;
-const reverseString = (str) => {
-  let reversed = "";
-  for (let i = str.length - 1; i >= 0; i--) {
-    reversed += str[i];
-  }
-  return reversed;
-};
-function palinCheck(isPalin) {
-  const theString = isPalin.toString();
-  const answer = [];
-  answer.push(theString.slice(0, Math.ceil(theString.length / 2)));
-  const answer2 = answer2.push(
-    theString.slice(Math.floor(theString.length / 2), theString.length)
-  );
-
-  // console.log(answer2);
-}
 // your logic here aite let's start
 const palindromeIntCheck = (num) => {
   const str = num.toString(); // convert to string first
@@ -190,11 +172,11 @@ const betterPalindromeCheck = (num) => {
       return false;
     }
   }
-
-  // if return false; hasn't been hit, that means this is indeed
-  // a palindrome. Therefore we want to return true as an output.
   return true;
 };
+// if return false; hasn't been hit, that means this is indeed
+// a palindrome. Therefore we want to return true as an output.
+
 console.log("CHECKING BETTERPALINDROME");
 console.log(betterPalindromeCheck(12321)); // true
 console.log(betterPalindromeCheck(1234521)); // false
@@ -215,32 +197,35 @@ const palinCheckPop = (num) => {
 console.log("POPOPOPOPOPCHECK");
 console.log(palinCheckPop(12321));
 console.log(palinCheckPop(12341242));
-// can you actually explain to me from start to end? what you're trying to do
 
-//   for (
-//     let i = theString.length - 1;
-//     i >= Math.floor(theString.length / 2);
-//     i--
-//   ) {
-//     console.log(theString[i]);
-//     console.log(answer2);
-//     console.log(answer);
-//     if (answer === answer2) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   }
-// }
+// FizzBuzz, leetcode easy problem
 
-// console.log(palinCheck(integer));
+var fizzBuzz = function (n) {
+  const strArr = [];
+  for (let i = 1; i < n + 1; i++)
+    if (i % 5 === 0 && i % 3 === 0) {
+      strArr.push("FizzBuzz");
+    } else if (i % 5 === 0) {
+      strArr.push("Buzz");
+    } else if (i % 3 === 0) {
+      strArr.push("Fizz");
+    } else {
+      strArr.push(i.toString());
+    }
+  return strArr;
+};
 
-// some other ways to do it, if it helps you
-// probably not the solution you want LOL
-// const palinCheck1 = (num) => {
-//   const str = num.toString();
-//   return str === str.split("").reverse().join("");
-// };
+console.log(fizzBuzz(30));
 
-// console.log(palinCheck1("12321")); // true
-// console.log(palinCheck1("1234")); // false
+//Fibonacci sequence 0, 1, 1, 2, 3, 5, 8, 13,
+
+const fib = function (n) {
+  const sequence = [];
+  for (let i = 0; i < n; i++) {
+    sequence.push(i + [i]);
+  }
+
+  return sequence;
+};
+
+console.log(fib(30));
