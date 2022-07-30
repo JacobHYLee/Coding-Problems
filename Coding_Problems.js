@@ -254,3 +254,32 @@ function plusOne(digits) {
 }
 
 console.log(plusOne([5]));
+
+// Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+function findSingle(nums) {
+  let arr1 = [];
+  let arr2 = [];
+  let sum1 = 0;
+  let sum2 = 0;
+  if (nums.length > 1) {
+    for (let i = 0; i < nums.length; i++) {
+      if (arr1.includes(nums[i]) === false) {
+        arr1.push(nums[i]);
+      } else {
+        arr2.push(nums[i]);
+      }
+    }
+    for (let i = 0; i < arr1.length; i++) {
+      sum1 += arr1[i];
+    }
+    for (let i = 0; i < arr2.length; i++) {
+      sum2 += arr2[i];
+    }
+
+    return sum1 - sum2;
+  } else {
+    return nums;
+  }
+}
+console.log(findSingle([1, 1, 2]));
