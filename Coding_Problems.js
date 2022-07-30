@@ -198,7 +198,7 @@ console.log("POPOPOPOPOPCHECK");
 console.log(palinCheckPop(12321));
 console.log(palinCheckPop(12341242));
 
-// FizzBuzz, leetcode easy problem
+// ------------FizzBuzz, leetcode easy problem
 
 var fizzBuzz = function (n) {
   const strArr = [];
@@ -217,15 +217,40 @@ var fizzBuzz = function (n) {
 
 console.log(fizzBuzz(30));
 
-//Fibonacci sequence 0, 1, 1, 2, 3, 5, 8, 13,
+// -----------Return the length of the last word in a string
 
-const fib = function (n) {
-  const sequence = [];
-  for (let i = 0; i < n; i++) {
-    sequence.push(i + [i]);
-  }
+const lolw = function (s) {
+  const words = s.trim();
+  const arrWords = words.split(" ");
+  const lastWord = arrWords[arrWords.length - 1];
 
-  return sequence;
+  return lastWord.length;
 };
 
-console.log(fib(30));
+console.log(lolw("Nice computer you got there "));
+
+// Plus one - You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
+
+const testDigits = [1, 5, 2, 9, 9];
+
+function plusOne(digits) {
+  let index = digits.length - 1;
+
+  while (digits[index] === 9 && digits.length > 1) {
+    (digits[index] = 0), index--;
+  }
+
+  if (digits[0] === 0 && digits.length > 1) {
+    digits.unshift(1);
+  } else if (digits[0] === 0) {
+    digits[index] += 1;
+  } else if (digits[0] === 0 && digits.length > 0) {
+    digits[index] += 1;
+  } else if (digits[index] === 9) {
+    digits = [1, 0];
+  } else digits[index] += 1;
+
+  return digits;
+}
+
+console.log(plusOne([5]));
