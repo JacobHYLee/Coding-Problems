@@ -283,3 +283,23 @@ function findSingle(nums) {
   }
 }
 console.log(findSingle([1, 1, 2]));
+
+//Write a function to find the longest common prefix string amongst an array of strings.
+//If there is no common prefix, return an empty string ""
+
+function CP(strings) {
+  const compare = [];
+  const answer = [];
+  for (let i = 0; i < strings.length; i++) {
+    for (let j = 0; j < strings.length; j++) {
+      if (strings.substring()) {
+        answer.push(strings[i]);
+      }
+    }
+    return answer;
+  }
+}
+console.log(CP(["hello", "helicopter", "heater", "her"]));
+// const arr2 = ["bike", "bile", "biome", "billet"];
+
+// console.log(arr2[0].slice(1, 2));
