@@ -286,20 +286,32 @@ console.log(findSingle([1, 1, 2]));
 
 //Write a function to find the longest common prefix string amongst an array of strings.
 //If there is no common prefix, return an empty string ""
+//CANNOT SOLVE
 
-function CP(strings) {
-  const compare = [];
-  const answer = [];
-  for (let i = 0; i < strings.length; i++) {
-    for (let j = 0; j < strings.length; j++) {
-      if (strings.substring()) {
-        answer.push(strings[i]);
-      }
+// function CP(strings) {
+//   const index = strings.length
+//   const count = 0
+//   while (count < strings.length) {
+//     count ++;
+//     if (strings[count])
+//   }
+// }
+// console.log(CP(["hello", "helicopter", "heater", "her"]));
+
+//Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed. LEETCODE # 27.
+
+const removeElement = function (nums, val) {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === val) {
+      nums.splice(i, 1);
     }
-    return answer;
   }
-}
-console.log(CP(["hello", "helicopter", "heater", "her"]));
-// const arr2 = ["bike", "bile", "biome", "billet"];
+  return nums;
+};
 
-// console.log(arr2[0].slice(1, 2));
+console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
+
+// const nnewArr = [1, 2, 3, 4, 5];
+// nnewArr.splice(2, 1);
+
+// console.log(nnewArr);
